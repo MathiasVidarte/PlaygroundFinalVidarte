@@ -1,0 +1,22 @@
+<!-- MiApp/templates/categoria.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Categorías</title>
+    <!-- Puedes incluir tus estilos CSS aquí -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Listado de Categorías</h1>
+    
+    <!-- Aquí puedes agregar el contenido específico de la página -->
+    {% for categoria in categorias %}
+        <h2>{{ categoria.nombre }}</h2>
+        <hr>
+    {% endfor %}
+    
+</body>
+</html>

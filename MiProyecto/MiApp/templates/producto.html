@@ -1,0 +1,25 @@
+<!-- MiApp/templates/producto.html -->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listado de Productos</title>
+    <!-- Puedes incluir tus estilos CSS aquí -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Listado de Productos</h1>
+    
+    <!-- Aquí puedes agregar el contenido específico de la página -->
+    {% for producto in productos %}
+        <h2>{{ producto.nombre }}</h2>
+        <p>{{ producto.descripcion }}</p>
+        <p>Categoría: {{ producto.categoria.nombre }}</p>
+        <p>Precio: ${{ producto.precio }}</p>
+        <hr>
+    {% endfor %}
+    
+</body>
+</html>
