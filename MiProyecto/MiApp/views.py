@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from .forms import CategoriaForm, ProductoForm, ClienteForm
+from models import Cliente
 
 def categoria(request):
     if request.method == 'POST':
@@ -30,4 +31,13 @@ def cliente(request):
     else:
         form = ClienteForm()
     return render(request, 'cliente.html', {'form': form})
+
+def buscar_clientes(request):
+    if 'q' in request.GET:
+        query = request.GET['q']
+        clientes = Cliente.objects.filter(nombre__icontains=query)
+    else:
+        clientes = Cliente.objects.all()
+    
+    return render(request, 'cliente_list.html', {'clientes': clientes})
 
