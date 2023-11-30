@@ -1,5 +1,5 @@
-<!-- MiApp/templates/cliente.html -->
-{% extends 'base.html' %}
+<!-- MiApp/templates/categoria.html -->
+
 {% load static %}
 
 <!DOCTYPE html>
@@ -7,24 +7,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listado de Clientes</title>
+    <title>Listado de Categorías</title>
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 
 <body>
-    <h1>Listado de Clientes</h1>
+    <h1>Listado de Categorías</h1>
     
     <div class="container">
-        <h2>Cliente Form</h2>
-        <form method="post" action="{% url 'procesar_cliente' %}">
+        <h2>Categoría</h2>
+        <form method="post" action="{% url 'procesar_categoria' %}">
 
             {% csrf_token %}
             {{ form.as_p }}
-            <input type="submit" value="Guardar">
+            <input type="submit" value="Buscar">
         </form>
     </div>
-    {% for cliente in clientes %}
-        <p>{{ cliente.nombre }} - {{ cliente.correo }}</p>
+    {% for categoria in categorias %}
+        <p>{{ categoria.nombre }}</p>
     {% endfor %}
     
 </body>
