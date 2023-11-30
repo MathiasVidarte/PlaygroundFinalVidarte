@@ -1,24 +1,30 @@
 <!-- MiApp/templates/producto.html -->
+{% extends 'base.html' %}
 {% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listado de Productos</title>
-    <!-- Puedes incluir tus estilos CSS aquí -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
+
 <body>
     <h1>Listado de Productos</h1>
     
-    <!-- Aquí puedes agregar el contenido específico de la página -->
+    <div class="container">
+        <h2>Producto Form</h2>
+        <form method="post" action="{% url 'procesar_producto' %}">
+
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Guardar">
+        </form>
+    </div>
     {% for producto in productos %}
-        <h2>{{ producto.nombre }}</h2>
-        <p>{{ producto.descripcion }}</p>
-        <p>Categoría: {{ producto.categoria.nombre }}</p>
-        <p>Precio: ${{ producto.precio }}</p>
-        <hr>
+        <p>{{ producto.nombre }} - {{ producto.descripcion }} - {{ producto.precio }}</p>
     {% endfor %}
     
 </body>
