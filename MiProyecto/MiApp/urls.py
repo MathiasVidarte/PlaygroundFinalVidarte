@@ -1,7 +1,7 @@
 
 from django.urls import path
 from .views import (
-    pagina_inicio,
+    HomePageView,
     categoria,
     procesar_categoria,
     lista_categorias,
@@ -13,7 +13,7 @@ from .views import (
 )
 
 urlpatterns = [
-    path('', pagina_inicio, name='pagina_inicio'),
+    path('index/', HomePageView.as_view(), name='home'),
     path('categoria/', categoria, name='categoria'),
     path('procesar-categoria/', procesar_categoria, name='procesar_categoria'),
     path('lista-categorias/', lista_categorias, name='lista_categorias'),

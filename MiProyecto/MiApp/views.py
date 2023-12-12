@@ -2,9 +2,16 @@ from django.shortcuts import render, redirect
 from .forms import CategoriaForm, ProductoForm, ClienteForm
 from .models import Cliente, Categoria, Producto
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.views.generic import TemplateView
 
-def pagina_inicio(request):
-    return render(request, 'inicio.html')
+
+
+class HomePageView(TemplateView):
+    template_name = 'blog/index.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        return context
 
 def categoria(request):
     if request.method == 'POST':
