@@ -2,7 +2,7 @@
 from django.urls import path
 from .views import (
     HomePageView,
-    categoria,
+    CategoriasView,
     procesar_categoria,
     lista_categorias,
     producto,
@@ -14,7 +14,7 @@ from .views import (
 
 urlpatterns = [
     path('index/', HomePageView.as_view(), name='home'),
-    path('categoria/', categoria, name='categoria'),
+    path('categorias/', CategoriasView.as_view(), name='categorias'),
     path('procesar-categoria/', procesar_categoria, name='procesar_categoria'),
     path('lista-categorias/', lista_categorias, name='lista_categorias'),
     path('producto/', producto, name='producto'),

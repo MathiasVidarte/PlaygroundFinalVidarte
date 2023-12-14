@@ -3,7 +3,7 @@ from .forms import CategoriaForm, ProductoForm, ClienteForm
 from .models import Cliente, Categoria, Producto
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import TemplateView
-
+from django.views import View
 
 
 class HomePageView(TemplateView):
@@ -13,7 +13,7 @@ class HomePageView(TemplateView):
         context = super().get_context_data(**kwargs)
         return context
 
-def categoria(request):
+def categorias(request):
     if request.method == 'POST':
         form = CategoriaForm(request.POST)
         if form.is_valid():
@@ -21,7 +21,7 @@ def categoria(request):
             return redirect('categoria')
     else:
         form = CategoriaForm()
-    return render(request, 'categoria.html', {'form': form})
+    return render(request, 'categorias.html', {'form': form})
 
 def procesar_categoria(request):
     if request.method == 'POST':
@@ -32,7 +32,7 @@ def procesar_categoria(request):
         form = CategoriaForm()
 
     categorias = Categoria.objects.all()
-    return render(request, 'categoria.html', {'form': form, 'categorias': categorias})
+    return render(request, 'categorias.html', {'form': form, 'categorias': categorias})
 
 def lista_categorias(request):
     categorias_list = Categoria.objects.all()
@@ -48,6 +48,11 @@ def lista_categorias(request):
         categorias = paginator.page(paginator.num_pages)
 
     return render(request, 'lista_categorias.html', {'categorias': categorias})
+
+
+class CategoriasView(View):
+    def get(self, request, *args, **kwargs):
+        return render(request, 'miapp/categorias.html')
 
 def producto(request):
     if request.method == 'POST':

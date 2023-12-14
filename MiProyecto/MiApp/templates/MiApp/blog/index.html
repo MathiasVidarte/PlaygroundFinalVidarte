@@ -1,49 +1,79 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Mi Blog</title>
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-</head>
+    <!DOCTYPE html>
+    <html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Mi Blog</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
 <body>
 
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-8">
-                <h1>Mi Blog</h1>
+                <h1>Autopartes M18</h1>
 
-                <!-- Ejemplo de entrada del blog -->
+                
                 <div class="card mb-4">
-                    <img src="imagen-de-entrada.jpg" class="card-img-top" alt="...">
+                    <img src="https://www.warnes.com.uy/wp-content/uploads/2021/07/nuestro-local.jpg" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h2 class="card-title">Título de la Entrada</h2>
-                        <p class="card-text">Contenido de la entrada. Puedes escribir tu blog aquí.</p>
-                        <a href="#" class="btn btn-primary">Leer más</a>
+                        <h2 class="card-title">Compra, venta y permuta de autopartes.</h2>
+                        <p class="card-text">Somos una empresa dedicada a la compra, venta y permuta de autopartes nuevas y usadas con mas de 30 años en el rubro, de reconocida atención cálida y profesional.</p>
+                        <a href="#" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
 
-                <!-- Repite este bloque para más entradas del blog -->
+                
 
             </div>
             <div class="col-md-4">
-                <!-- Barra lateral (puedes agregar widgets, anuncios, etc.) -->
+                <!-- Barra lateral -->
                 <div class="card">
                     <div class="card-body">
-                        <h5 class="card-title">Barra lateral</h5>
-                        <p class="card-text">Contenido de la barra lateral.</p>
+                        <h5 class="card-title">Navegá en nuestro sitio</h5>
+                        <ul class="list-group">
+                            <li class="list-group-item"><a href="{% url 'home' %}">Inicio</a></li>
+                            <li class="list-group-item"><a href="{% url 'producto' %}">Productos</a></li>
+                            <li class="list-group-item"><a href="{% url 'cliente' %}">Clientes</a></li>
+                            <li class="list-group-item"><a href="{% url 'categorias' %}">Categorías</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
+    <footer class="bg-dark text-light py-4">
+        <div class="container-fluid">
+          <div class="row">
+            <div class="col-md-6">
+              <ul class="list-unstyled">
+                <li><a href="#">Inicio</a></li>
+                <li><a href="#">Acerca de nosotros</a></li>
+                <li><a href="#">Contacto</a></li>
+              </ul>
+            </div>
+    
+            <div class="col-md-6 text-md-right">
+              <p>&copy; 2023 Autopartes M18. Todos los derechos reservados.</p>
+            </div>
+    
+            <div class="col-md-12 mt-3">
+                <h5>Redes Sociales</h5>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-facebook"></i></a></li>
+                  <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-twitter"></i></a></li>
+                  <li class="list-inline-item"><a href="#" target="_blank"><i class="fab fa-instagram"></i></a></li>
+                  <!-- Agrega más iconos según sea necesario -->
+                </ul>
+            </div>
+          </div>
         </div>
-    </div>
-
-    <!-- Bootstrap JS y Popper.js (necesarios para los componentes de Bootstrap) -->
+    </footer>
+    
+    <!-- Scripts al final del cuerpo del documento para una carga más rápida -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
