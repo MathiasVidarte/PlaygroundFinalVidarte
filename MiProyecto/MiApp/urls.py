@@ -1,5 +1,6 @@
 
 from django.urls import path
+from .import views
 from .views import (
     HomePageView,
     CategoriasView,
@@ -24,4 +25,6 @@ urlpatterns = [
     path('cliente/', cliente, name='cliente'),
     path('buscar-clientes/', buscar_clientes, name='buscar_clientes'),
     path('procesar-cliente/', procesar_cliente, name='procesar_cliente'),
+    path('signup/', views.signup, name='signup'),
+    path('profile/', views.profile, name='profile')
 ]

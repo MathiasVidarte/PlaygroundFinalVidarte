@@ -1,9 +1,11 @@
 from django.shortcuts import render, redirect
-from .forms import CategoriaForm, ProductoForm, ClienteForm
+from django.contrib.auth.decorators import login_required
+from .forms import CategoriaForm, ProductoForm, ClienteForm, CustomUserCreationForm, CustomUserUpdateForm
 from .models import Cliente, Categoria, Producto
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.views.generic import TemplateView
 from django.views import View
+from django.contrib import messages
 
 
 class HomePageView(TemplateView):
@@ -110,3 +112,27 @@ def procesar_cliente(request):
 
     clientes = Cliente.objects.all()
     return render(request, 'MiApp/cliente.html', {'form': form, 'clientes': clientes})
+
+def signup(request):
+    if request.method == 'POST':
+        form = CustomUserCreationForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Account created successfully.')
+            return redirect('login')
+    else:
+        form = CustomUserCreationForm()
+    return render(request, 'accounts/signup.html', {'form': form})
+
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        form = CustomUserUpdateForm(request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Profile updated successfully.')
+            return redirect('profile')
+    else:
+        form = CustomUserUpdateForm(instance=request.user)
+    return render(request, 'accounts/profile.html', {'form': form})
+

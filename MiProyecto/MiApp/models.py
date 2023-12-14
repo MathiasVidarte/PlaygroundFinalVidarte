@@ -1,4 +1,12 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
+
+class CustomUser(AbstractUser):
+    email = models.EmailField(unique=True)
+    profile_image = models.ImageField(upload_to='profile_images/', blank=True, null=True)
+    description = models.TextField(blank=True)
+    website_link = models.URLField(blank=True)
+
 
 class Categoria(models.Model):
     nombre = models.CharField(max_length=100)
