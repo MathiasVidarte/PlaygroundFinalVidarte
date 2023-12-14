@@ -13,6 +13,11 @@ class HomePageView(TemplateView):
         context = super().get_context_data(**kwargs)
         return context
 
+
+def nosotros(request):
+    return render(request, 'miapp/blog/nosotros.html')
+
+
 def categorias(request):
     if request.method == 'POST':
         form = CategoriaForm(request.POST)
