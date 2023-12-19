@@ -25,6 +25,10 @@ class Producto(models.Model):
     descripcion = models.TextField()
     categoria = models.ForeignKey(Categoria, on_delete=models.CASCADE, related_name='productos')
     precio = models.DecimalField(max_digits=10, decimal_places=2)
+    imagen = models.ImageField(upload_to='productos/', null=True, blank=True)
+
+    def __str__(self):
+        return self.nombre
 
 
 class Cliente(models.Model):

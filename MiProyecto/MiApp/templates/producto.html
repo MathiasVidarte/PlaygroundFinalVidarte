@@ -14,7 +14,7 @@
     <h1>Listado de Productos</h1>
     
     <div class="container">
-        <h2>Producto Form</h2>
+        <h2>Productos</h2>
         <form method="post" action="{% url 'procesar_producto' %}">
 
             {% csrf_token %}
@@ -24,6 +24,9 @@
     </div>
     {% for producto in productos %}
         <p>{{ producto.nombre }} - {{ producto.descripcion }} - {{ producto.precio }}</p>
+        {% if producto.imagen %}
+            <img src="{{ producto.imagen.url }}" alt="{{ producto.nombre }}">
+        {% endif %}
     {% endfor %}
     
     <footer class="bg-dark text-light py-4">
