@@ -17,6 +17,7 @@ urlpatterns = [
     path('buscar-clientes/', views.buscar_clientes, name='buscar_clientes'),
     path('signup/', views.signup, name='signup'),
     path('profile/', views.profile, name='profile'),
+    path('about/', views.about_me, name='about_me'),
 ]
 
 if settings.DEBUG:

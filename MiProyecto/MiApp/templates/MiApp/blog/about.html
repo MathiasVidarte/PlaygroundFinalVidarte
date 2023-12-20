@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - Autopartes M18</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff; /* Cambiado a fondo blanco */
+            color: #333; /* Texto principal en negro */
+        }
+
+        header {
+            background-color: #343a40; /* Gris oscuro de Bootstrap */
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+
+        section {
+            margin: 2em auto;
+            padding: 2em;
+            background-color: #f8f9fa; /* Gris claro de Bootstrap */
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #fff; /* Blanco para destacar el título */
+        }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #343a40; /* Gris oscuro de Bootstrap */
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container"> <!-- Contenedor Bootstrap -->
+            <h1 class="display-4">Autopartes M18</h1>
+            <p class="lead">Compra, Venta y Permutas de Autopartes</p>
+
+            <ul class="nav">
+                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'nosotros' %}">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'about_me' %}">About Me</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="container">
+        <h2>About Me - Mathias Vidarte</h2>
+        <p>Hola, soy Mathias Vidarte, el desarrollador detrás de Autopartes M18. Me apasiona crear soluciones tecnológicas que faciliten la experiencia de nuestros clientes en el mundo de las autopartes.</p>
+
+        <p>En Autopartes M18 nos esforzamos por proporcionar un servicio de calidad, ofreciendo una plataforma fácil de usar para comprar, vender y permutar autopartes. Nuestro objetivo es conectar a los entusiastas del automóvil y simplificar el proceso de obtener las piezas que necesitan.</p>
+
+        <p>Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto conmigo. Estoy aquí para ayudar a que Autopartes M18 sea la mejor experiencia para ti.</p>
+    </section>
+
+    <footer>
+        <div class="container"> <!-- Contenedor Bootstrap -->
+            <p>&copy; 2023 Autopartes M18 | Desarrollado por Mathias Vidarte</p>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+

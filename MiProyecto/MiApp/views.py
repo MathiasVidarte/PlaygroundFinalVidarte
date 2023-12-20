@@ -168,3 +168,10 @@ def profile(request):
         form = CustomUserUpdateForm(instance=request.user)
 
     return render(request, 'accounts/profile.html', {'form': form})
+
+def about_me(request):
+    # Puedes agregar información sobre el creador y el proyecto aquí
+    context = {
+        'about_text': "¡Bienvenido a nuestro proyecto! Somos...",
+    }
+    return render(request, 'MiApp/blog/about.html', context)
