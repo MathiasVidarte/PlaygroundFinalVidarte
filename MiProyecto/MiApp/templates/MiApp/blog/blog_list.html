@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Lista de Blogs</title>
+</head>
+<body>
+    <h1>Lista de Blogs</h1>
+    {% for blog in blogs %}
+        <h2>{{ blog.title }}</h2>
+        <p>{{ blog.content }}</p>
+        <a href="{% url 'blog_detail' blog.id %}">Leer más</a>
+        <hr>
+    {% endfor %}
+</body>
+</html>

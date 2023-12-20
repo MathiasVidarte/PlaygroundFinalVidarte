@@ -1,10 +1,10 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import TemplateView, View
 from .forms import CategoriaForm, ProductoForm, ClienteForm, CustomUserCreationForm, CustomUserUpdateForm
-from .models import Cliente, Categoria, Producto
+from .models import Cliente, Categoria, Producto, Blog
 
 
 class HomePageView(TemplateView):
@@ -175,3 +175,12 @@ def about_me(request):
         'about_text': "¡Bienvenido a nuestro proyecto! Somos...",
     }
     return render(request, 'MiApp/blog/about.html', context)
+
+
+def blog_list(request):
+    blogs = Blog.objects.all()
+    return render(request, 'MiApp/blog/blog_list.html', {'blogs': blogs})
+
+def blog_detail(request, blog_id):
+    blog = get_object_or_404(Blog, id=blog_id)
+    return render(request, 'MiApp/blog/blog_detail.html', {'blog': blog})
